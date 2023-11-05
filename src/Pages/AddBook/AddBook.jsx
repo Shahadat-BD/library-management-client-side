@@ -13,8 +13,9 @@ const AddBook = () => {
         const bookImage = form.bookImage.value
         const details = form.details.value
         const category = form.category.value
+        const readBook = form.readBook.value
          
-        const bookInfo = {bookName,authorName,rating,quantity,bookImage,details,category}
+        const bookInfo = {bookName,readBook,authorName,rating,quantity,bookImage,details,category}
         console.log(bookInfo);
 
          fetch('http://localhost:3000/books-add',{
@@ -50,7 +51,9 @@ const AddBook = () => {
                 <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='Book details' name="details" id="" />
                 </div>
                 <input className='w-full my-3 py-2 pl-2  rounded-sm' type="text" required placeholder='book image link here' name="bookImage" id="" /> 
+                <textarea  className='pl-2 mb-3 w-full  rounded-sm' placeholder='Write some part of the book' name="readBook" id="" cols="30" rows="10"/>
                 <input className='w-full cursor-pointer bg-red-500 text-white py-2 font-bold rounded-sm' type="submit" value="Add Book" />
+
             </form>
             <ToastContainer></ToastContainer>
         </div>
