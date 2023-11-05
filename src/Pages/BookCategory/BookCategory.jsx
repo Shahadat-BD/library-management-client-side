@@ -20,7 +20,7 @@ const BookCategory = () => {
                         <div key={category._id}>
                              <img className='h-[200px]' src={category.image} alt="" srcset="" />
                               <h3>{category.category}</h3>
-                             <Link to={`/books/${category.category}`}> <button className='px-5 py-2 text-white bg-[#FF3811] rounded-md'>show books</button></Link>
+                             <Link to={`/books/${category.category}`}> <button className='px-5 py-2 text-white bg-pink-600 rounded-md'>show books</button></Link>
                         </div>
                 )
               }

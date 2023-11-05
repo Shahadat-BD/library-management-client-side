@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-
+import logo from "../assets/images/logo.png";
 const Navbar = () => {
 
   const { user,logOut } = useContext(AuthContext)
@@ -20,9 +20,10 @@ const Navbar = () => {
       <NavLink 
       className="px-0 rounded-none font-semibold text-md"
       style={({ isActive }) => ({
-        color: isActive ? "red" : "black",
-        borderBottom: isActive ? "2px solid red" : "none",
+        color: isActive ? "#FF69B4" : "black",
+        borderBottom: isActive ? "2px solid #FF69B4" : "none",
         background: isActive ? "none" : "none",
+        fontWeight:"bold"
       })} to={'/'}
       >
         Home
@@ -32,9 +33,10 @@ const Navbar = () => {
       <NavLink 
       className="px-0 rounded-none font-semibold text-md"
       style={({ isActive }) => ({
-        color: isActive ? "red" : "black",
-        borderBottom: isActive ? "2px solid red" : "none",
+        color: isActive ? "#FF69B4" : "black",
+        borderBottom: isActive ? "2px solid #FF69B4" : "none",
         background: isActive ? "none" : "none",
+        fontWeight:"bold"
       })} to={'/add-books'}
       >
         Add Books
@@ -44,9 +46,10 @@ const Navbar = () => {
       <NavLink 
       className="px-0 rounded-none font-semibold text-md"
       style={({ isActive }) => ({
-        color: isActive ? "red" : "black",
-        borderBottom: isActive ? "2px solid red" : "none",
+        color: isActive ? "#FF69B4" : "black",
+        borderBottom: isActive ? "2px solid #FF69B4" : "none",
         background: isActive ? "none" : "none",
+        fontWeight:"bold"
       })} to={'/all-books'}
       >
         All Books
@@ -56,9 +59,10 @@ const Navbar = () => {
       <NavLink 
       className="px-0 rounded-none font-semibold text-md"
       style={({ isActive }) => ({
-        color: isActive ? "red" : "black",
-        borderBottom: isActive ? "2px solid red" : "none",
+        color: isActive ? "#FF69B4" : "black",
+        borderBottom: isActive ? "2px solid #FF69B4" : "none",
         background: isActive ? "none" : "none",
+        fontWeight:"bold"
       })} to={'/borrowed-Books'}
       >
         Borrowed Books
@@ -67,8 +71,8 @@ const Navbar = () => {
   </>
 
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className='lg:w-[85%] w-[95%] m-auto mb-3 mt-2'>
+      <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -78,7 +82,16 @@ const Navbar = () => {
               {link}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <Link to={'/'}>
+            <div className='flex items-center'>
+            <img className='w-20' src={logo} alt="" srcset="" />
+            <div>
+              <p className='text-3xl font-bold'>
+                Book<span className='text-pink-600'>Stack</span>
+              </p>
+            </div>
+            </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -98,14 +111,14 @@ const Navbar = () => {
           {user ? (
             <NavLink
               onClick={handleLogOut}
-              className="bg-red-500 text-white lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
+              className="bg-pink-600 text-white lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
             >
               LogOut
             </NavLink>
           ) : (
             <NavLink
               to={"/login"}
-              className="bg-red-500 text-white lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
+              className="bg-pink-600 text-white lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
             >
               Login
             </NavLink>

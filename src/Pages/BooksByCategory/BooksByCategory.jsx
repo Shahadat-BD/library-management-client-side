@@ -18,7 +18,7 @@ function BooksByCategory() {
                                 <p className='text-gray-600 font-bold'>Category : {book.category}</p>
                                 <p className='my-2'>{book.rating}</p>
                                <Link to={`/bookDetails/${book._id}`}>
-                               <button className='bg-[#ff3811] text-white font-bold px-5 py-2 rounded-md'>Book Details</button>
+                               <button className='bg-pink-600 text-white font-bold px-5 py-2 rounded-md'>Book Details</button>
                                </Link>
                              </div>
                            </div>

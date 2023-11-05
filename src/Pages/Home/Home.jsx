@@ -6,7 +6,7 @@ import Review from '../Review/Review';
 
 const Home = () => {
     return (
-        <div>
+        <div className='lg:w-[85%] w-[95%] m-auto mb-14 mt-8'>
             <Banner></Banner>
             <AboutUs></AboutUs>
             <BookCategory></BookCategory>
