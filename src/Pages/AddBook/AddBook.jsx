@@ -39,7 +39,7 @@ const AddBook = () => {
                 <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5'>
                 <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='book name' name="bookName" id="" />
                 <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='Author name' name="authorName" id="" />
-                <input className='py-2 pl-2  rounded-sm' type='number' placeholder='rating' name="rating" id="" />
+                <input className='py-2 pl-2  rounded-sm' type='number'  min="0" max="1000" step="0.01" placeholder='rating' name="rating" id="" />
                 <input className='py-2 pl-2  rounded-sm' type="number" required placeholder='book quantity' name="quantity" id="" />
                 <select name="category" id="">
                     <option value="islamic">islamic</option>
