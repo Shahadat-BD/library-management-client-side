@@ -1,7 +1,7 @@
-import React from 'react'
 
-function BorrowedTable({borrowed}) {
-    const {bookImage,bookName,category,borrowedDate,returnDate} = borrowed
+
+function BorrowedTable({borrowed,handleReturnButton}) {
+    const {bookImage,bookName,category,borrowedDate,returnDate,_id} = borrowed
     return (
         <tr>
         <td>
@@ -22,7 +22,7 @@ function BorrowedTable({borrowed}) {
         <td>{category}</td>
         <td>{returnDate}</td>
         <th>
-          <button className="text-white bg-pink-500 px-4 py-1 rounded-md">Return</button>
+          <button onClick={()=>handleReturnButton(_id,category)} className="text-white bg-pink-500 px-4 py-1 rounded-md">Return</button>
         </th>
       </tr>
     )

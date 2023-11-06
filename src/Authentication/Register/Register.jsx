@@ -111,7 +111,7 @@ const Register = () => {
               </div>
 
               <div className="form-control mt-6">
-                <input  className="text-white border-none cursor-pointer bg-pink-600 py-3 text-lg font-semibold rounded-md"
+                <input  className="text-white border-none cursor-pointer bg-pink-500 py-3 text-lg font-semibold rounded-md"
                   type="submit"
                   value={'Register'}
                 >

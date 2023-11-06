@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext, useState} from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { ToastContainer, toast } from "react-toastify";
@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 function BookDetails() {
     const bookDetails = useLoaderData()
     const {bookImage,bookName,quantity,rating,authorName,category,details,_id} = bookDetails
+
     const {user} = useContext(AuthContext)
     const userName = user?.displayName
     const email = user?.email
@@ -19,9 +20,7 @@ function BookDetails() {
     const formattedToday = dd + '/' + mm + '/' + yyyy;
     const borrowedDate = formattedToday
 
-     const parseQuantity = parseInt(quantity)
-    // const [decreaseQuantity,setDecreaseQuantity] = useState(parseQuantity)
-
+    const parseQuantity = parseInt(quantity)
     let decreaseQuantity = parseQuantity
 
 const handleBookBorrow = event =>{

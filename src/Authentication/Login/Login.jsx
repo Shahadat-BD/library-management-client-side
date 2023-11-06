@@ -89,7 +89,7 @@ const Login = () => {
             <div className="my-4">
               <p className="text-center">
                 A New User ? please{" "}
-                <Link to={"/register"} className="text-pink-600">
+                <Link to={"/register"} className="text-pink-500">
                   Register
                 </Link>
               </p>

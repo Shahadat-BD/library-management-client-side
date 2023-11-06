@@ -5,6 +5,7 @@ import logo from "../assets/images/logo.png";
 const Navbar = () => {
 
   const { user,logOut } = useContext(AuthContext)
+  console.log(user?.photoURL);
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -87,7 +88,7 @@ const Navbar = () => {
             <img className='w-20' src={logo} alt="" srcset="" />
             <div>
               <p className='text-3xl font-bold'>
-                Book<span className='text-pink-600'>Stack</span>
+                Book<span className='text-pink-500'>Stack</span>
               </p>
             </div>
             </div>
@@ -111,7 +112,7 @@ const Navbar = () => {
           {user ? (
             <NavLink
               onClick={handleLogOut}
-              className="bg-pink-600 text-white lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
+              className="bg-pink-500 text-white lg:px-8 lg:py-3 px-3 py-2 lg:text-md text-xs font-semibold rounded-md"
             >
               LogOut
             </NavLink>
