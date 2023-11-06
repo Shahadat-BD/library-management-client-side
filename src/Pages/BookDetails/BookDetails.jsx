@@ -99,7 +99,7 @@ const handleBookBorrow = event =>{
                  {/* modal end here */}
 
 
-                <Link to={`/readBook/${bookName}`}>
+                <Link to={`/readBook/${_id}`}>
                   <button  className='py-2 ml-3 rounded-md text-white bg-pink-600 px-16 mt-3'>Read</button>
                 </Link>
             </div> 

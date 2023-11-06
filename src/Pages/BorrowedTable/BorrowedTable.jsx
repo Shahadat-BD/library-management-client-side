@@ -7,8 +7,8 @@ function BorrowedTable({borrowed,handleReturnButton}) {
         <td>
           <div className="flex items-center space-x-3">
             <div className="avatar">
-              <div className="mask rounded-md lg:w-32 lg:h-28 w-20 h-16">
-                <img src={bookImage} alt="service image" />
+              <div className="mask rounded-md  h-20">
+                <img  src={bookImage} alt="service image" />
               </div>
             </div>
           </div>

@@ -17,10 +17,11 @@ const BookCategory = () => {
              <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
              {
                 categoryBook.map(category => 
-                        <div key={category._id}>
-                             <img className='h-[200px]' src={category.image} alt="" srcset="" />
-                              <h3>{category.category}</h3>
-                             <Link to={`/books/${category.category}`}> <button className='px-5 py-2 text-white bg-pink-600 rounded-md'>show books</button></Link>
+                        <div key={category._id} className='text-center'>
+                             <img className='h-[200px] w-full rounded-md' src={category.image} alt="" srcset="" />
+                              <h3 className='text-xl my-2 font-bold '>{category.category}</h3>
+                            <Link to={`/books/${category.category}`} > <button className='px-5 py-2 text-white bg-pink-600 rounded-md'>show books</button></Link>
+            
                         </div>
                 )
               }

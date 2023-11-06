@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom'
 function ReadBooks() {
     const bookForRead =  useLoaderData()
     const {readBook,authorName,bookName} = bookForRead
-    const ref = useRef()
     return (
         <div className='lg:w-[85%] w-[95%] m-auto mb-14 mt-8'>
            
