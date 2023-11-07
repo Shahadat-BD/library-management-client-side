@@ -21,18 +21,20 @@ const AllBooks = () => {
                 allBooks.map(allBook => 
                 <div key={allBook._id}>
                     <img className='h-72 w-full rounded-r-xl ' src={allBook.bookImage} alt="" srcset="" />
-                     <p className='text-lg font-bold mt-2'>{allBook.bookName}</p>
+                     <p className='text-lg font-bold mt-2 dark:text-white'>{allBook.bookName}</p>
                       <p className='font-bold text-pink-500 text-sm '> {allBook.authorName}</p>
                       <p className='font-bold text-gray-500 text-sm'>category : {allBook.category}</p>
                       <p>{allBook.rating}</p>
                     
+                    <div className='flex'>
                     <Link to={`/updateBook/${allBook._id}`}>
-                    <button className='text-white bg-pink-500 px-2 py-2 rounded-md mr-5'> <BiEdit className='text-xl '/></button>
+                    <button className='text-white bg-pink-500 px-2 py-2 rounded-md mr-5 flex items-center'> <BiEdit className='text-xl'/>update</button>
                     </Link>
                     
                     <Link to={`/bookDetails/${allBook._id}`}>
-                    <button className='text-white bg-pink-500  px-2 py-2 rounded-md'> <BiSpreadsheet className='text-xl '/></button>
+                    <button className='text-white bg-pink-500  px-2 py-2 rounded-md flex items-center'> <BiSpreadsheet className='text-xl'/>details</button>
                     </Link>
+                    </div>
                 </div> 
                 )
             }

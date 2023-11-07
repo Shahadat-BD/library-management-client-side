@@ -34,7 +34,7 @@ const AddBook = () => {
     }
     return (
         <div>
-            <div className='lg:w-[60%] m-auto md:w-[70%] w-full md:my-[185px] lg:my-10  bg-gray-200'>
+            <div className='lg:w-[50%] rounded-md m-auto md:w-[70%] w-full md:my-[185px] lg:my-10  bg-gray-200'>
              <h3 className='text-2xl text-pink-600 font-bold p-3 text-center'>Add New Book</h3>
             <form onSubmit={handleAddBook} className='px-5 py-5'>
                 <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5'>

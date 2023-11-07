@@ -66,12 +66,12 @@ const BorrowedBooks = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th className='text-black font-bold'>Image</th>
-                            <th className='text-black font-bold'>Name</th>
-                            <th className='text-black font-bold'>Borrowed Date</th>
-                            <th className='text-black font-bold'>Category</th>
-                            <th className='text-black font-bold'>Return Date</th>
-                            <th className='text-black font-bold'>Borrowed Return</th>
+                            <th className='text-black dark:text-white font-bold'>Image</th>
+                            <th className='text-black dark:text-white font-bold'>Name</th>
+                            <th className='text-black dark:text-white font-bold'>Borrowed Date</th>
+                            <th className='text-black dark:text-white font-bold'>Category</th>
+                            <th className='text-black dark:text-white font-bold'>Return Date</th>
+                            <th className='text-black dark:text-white font-bold'>Borrowed Return</th>
                         </tr>
                     </thead>
                     <tbody>

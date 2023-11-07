@@ -41,7 +41,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="bg-gray-50">
+      <div>
         <div className="hero-content">
           <div className="card flex-shrink-0 w-full max-w-md  bg-base-100">
             <h1 className="text-3xl font-semibold text-center mt-3 text-pink-600">

@@ -15,12 +15,12 @@ function BorrowedTable({borrowed,handleReturnButton}) {
         </td>
         <td>
             <div>
-                <div className="font-bold"> {bookName}</div>
-            </div>
+                <div className="font-bold   dark:text-white "> {bookName}</div>
+            </div> 
         </td>
-        <td>{borrowedDate}</td>
-        <td>{category}</td>
-        <td>{returnDate}</td>
+        <td className=" dark:text-white ">{borrowedDate}</td>
+        <td className="  dark:text-white">{category}</td>
+        <td className="  dark:text-white">{returnDate}</td>
         <th>
           <button onClick={()=>handleReturnButton(_id,category)} className="text-white bg-pink-500 px-4 py-1 rounded-md">Return</button>
         </th>

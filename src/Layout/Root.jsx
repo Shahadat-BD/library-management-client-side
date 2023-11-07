@@ -4,7 +4,7 @@ import Footer from '../Shared/Footer';
 import { Outlet } from 'react-router-dom';
 const Root = () => {
     return (
-        <div>
+        <div className='dark:bg-[#111b20]'>
              <Navbar></Navbar>
              <Outlet></Outlet>
              <Footer></Footer>

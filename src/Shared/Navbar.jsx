@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import logo from "../assets/images/logo.png";
+import { CiDark } from "react-icons/ci";
 const Navbar = () => {
 
   const { user,logOut } = useContext(AuthContext)
@@ -16,59 +17,42 @@ const Navbar = () => {
       });
   };
 
+  const [theme, setTheme] = useState(null);
+
+  useEffect(() => {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      setTheme('dark');
+    }
+    else {
+      setTheme('light');
+    }
+  }, [])
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   const link = <>
-    <li className='pr-10'>
-      <NavLink 
-      className="px-0 rounded-none font-semibold text-md"
-      style={({ isActive }) => ({
-        color: isActive ? "#FF69B4" : "black",
-        borderBottom: isActive ? "2px solid #FF69B4" : "none",
-        background: isActive ? "none" : "none",
-        fontWeight:"bold"
-      })} to={'/'}
-      >
-        Home
-      </NavLink>
+      <li className='pr-10'>
+        <NavLink  className={'dark:text-white'}  to={'/'}>Home</NavLink>
       </li>
-    <li className='pr-10'>
-      <NavLink 
-      className="px-0 rounded-none font-semibold text-md"
-      style={({ isActive }) => ({
-        color: isActive ? "#FF69B4" : "black",
-        borderBottom: isActive ? "2px solid #FF69B4" : "none",
-        background: isActive ? "none" : "none",
-        fontWeight:"bold"
-      })} to={'/add-books'}
-      >
-        Add Books
-        </NavLink>
-        </li>
-    <li className='pr-10'>
-      <NavLink 
-      className="px-0 rounded-none font-semibold text-md"
-      style={({ isActive }) => ({
-        color: isActive ? "#FF69B4" : "black",
-        borderBottom: isActive ? "2px solid #FF69B4" : "none",
-        background: isActive ? "none" : "none",
-        fontWeight:"bold"
-      })} to={'/all-books'}
-      >
-        All Books
-      </NavLink>
+      <li className='pr-10'> 
+          <NavLink  className={'dark:text-white'}  to={'/add-books'}>Add Books</NavLink>
       </li>
-    <li className='pr-10'>
-      <NavLink 
-      className="px-0 rounded-none font-semibold text-md"
-      style={({ isActive }) => ({
-        color: isActive ? "#FF69B4" : "black",
-        borderBottom: isActive ? "2px solid #FF69B4" : "none",
-        background: isActive ? "none" : "none",
-        fontWeight:"bold"
-      })} to={'/borrowed-Books'}
-      >
-        Borrowed Books
-        </NavLink>
-        </li>
+      <li className='pr-10'>
+          <NavLink className={'dark:text-white'}  to={'/all-books'}>All Books</NavLink>
+      </li>
+      <li className='pr-10'>
+        <NavLink  className={'dark:text-white'} to={'/borrowed-Books'}> Borrowed Books</NavLink>
+      </li>
   </>
 
   return (
@@ -77,7 +61,7 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
               {link}
@@ -85,9 +69,9 @@ const Navbar = () => {
           </div>
           <Link to={'/'}>
             <div className='flex items-center'>
-            <img className='lg:w-20 w-10 lg:-ml-0 -ml-5' src={logo} alt="" srcset="" />
+            <img className='lg:w-20 w-10 lg:-ml-0 'src={logo} alt="" srcset="" />
             <div>
-              <p className='lg:text-3xl text-md font-bold'>
+              <p className='lg:text-3xl text-md font-bold dark:text-white'>
                 Book<span className='text-pink-500'>Stack</span>
               </p>
             </div>
@@ -100,7 +84,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-
+           <button onClick={handleThemeSwitch} className='dark:text-white' ><CiDark className='text-4xl'/></button>
           {
             user ?
               <img className="lg:w-12 lg:h-12 md:w-12 md:h-12 w-6 h-6 rounded-full mr-2" src={user.photoURL} alt="" />
@@ -108,7 +92,7 @@ const Navbar = () => {
               ""
 
           }
-          <p className="mr-3 lg:text-md md:text-md text-xs">{user && user.displayName}</p>
+          <p className="dark:text-white mr-3 lg:text-md md:text-md text-xs">{user && user.displayName}</p>
           {user ? (
             <NavLink
               onClick={handleLogOut}
@@ -131,3 +115,11 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+// style={({ isActive }) => ({
+//   color: isActive ? "#FF69B4" : "black",
+//   borderBottom: isActive ? "2px solid #FF69B4" : "none",
+//   background: isActive ? "none" : "none",
+//   fontWeight:"bold"
+// })}

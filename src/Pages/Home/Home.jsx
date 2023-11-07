@@ -2,7 +2,6 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import AboutUs from '../AboutUs/AboutUs';
 import BookCategory from '../BookCategory/BookCategory';
-import Review from '../Review/Review';
 import ContactUs from '../ContactUs/ContactUs';
 import LatestBook from '../LatestBook/LatestBook';
 
@@ -14,7 +13,6 @@ const Home = () => {
             <BookCategory></BookCategory>
             <AboutUs></AboutUs>
             <ContactUs></ContactUs>
-            <Review></Review>
         </div>
     );
 };

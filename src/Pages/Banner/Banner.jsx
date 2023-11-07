@@ -14,8 +14,8 @@ import slider_3 from "../../assets/images/slider/slider-3.jpg"
 
 const Banner = () => {
   return (
-    <div className="mt-5 mb-20">
-      <Swiper
+    <div className="my-10">
+      <Swiper 
         slidesPerView={1}
         autoplay={{
            delay : 2500
@@ -39,17 +39,18 @@ const Banner = () => {
           clickable: true,
         }}
         modules={[Pagination,Autoplay]}
-        className="mySwiper"
+        className="mySwiper relative"
       >
         <SwiperSlide >
-               <img className="rounded-lg h-[500px] w-full" src={slider_1} alt=""  />
+               <img className="lg:h-[500px] w-full "  src={slider_1} alt=""  />
         </SwiperSlide>
         <SwiperSlide >
-               <img className="rounded-lg h-[500px] w-full" src={slider_2} alt=""  />
+               <img className="lg:h-[500px] w-full"  src={slider_2} alt=""  />
         </SwiperSlide>
         <SwiperSlide >
-               <img className="rounded-lg h-[500px] w-full" src={slider_3} alt=""  />
-        </SwiperSlide>     
+               <img className="lg:h-[500px] w-full"  src={slider_3} alt=""  />
+        </SwiperSlide>
+            
       </Swiper>
 
     </div>
