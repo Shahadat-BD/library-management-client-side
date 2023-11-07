@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
-
+import {BiSpreadsheet} from "react-icons/bi"
 function BooksByCategory() {
     const bookData = useLoaderData()
     console.log('book data ', bookData);
@@ -9,16 +9,16 @@ function BooksByCategory() {
              <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5'>
                      {
                         bookData.map(book => 
-                        <div key={book._id} className='bg-gray-100 py-3 rounded-md'>
+                        <div key={book._id} className='bg-gray-900 text-white py-3 rounded-md'>
                            <div className='flex items-center lg:flex-row flex-col gap-5 mx-3'>
                            <img className='lg:w-[250px] m-auto md:w-full md:h-[200px] lg:h-[200px] rounded-md' src={book.bookImage} alt="" srcset="" />
                              <div className='w-4/5'>
-                                <p className='text-2xl font-bold'>{book.bookName}</p>
-                                <p className='text-gray-600 my-2 font-bold '>Author : {book.authorName}</p>
-                                <p className='text-gray-600 font-bold'>Category : {book.category}</p>
+                                <p className='text-2xl font-bold '>{book.bookName}</p>
+                                <p className='my-2 font-bold'>Author : {book.authorName}</p>
+                                <p className='font-bold'>Category : {book.category}</p>
                                 <p className='my-2'>{book.rating}</p>
                                <Link to={`/bookDetails/${book._id}`}>
-                               <button className='bg-pink-600 text-white font-bold px-5 py-2 rounded-md'>Book Details</button>
+                               <button className='bg-pink-600 text-white font-bold px-5 py-2 rounded-md flex items-center'><BiSpreadsheet className='text-2xl'/> Book Details </button>
                                </Link>
                              </div>
                            </div>
