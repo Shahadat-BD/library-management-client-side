@@ -12,7 +12,7 @@ const BookCategory = () => {
     },[])
     return (
         <div className='my-20'>
-              <h1 className='text-3xl text-center font-bold my-10'>Books Category</h1>
+              <h1 className='text-3xl font-bold my-10 border-pink-500 border-l-4 pl-4'> Books Category</h1>
 
              <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
              {
