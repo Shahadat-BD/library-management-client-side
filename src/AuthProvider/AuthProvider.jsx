@@ -35,12 +35,12 @@ const signInUser = (email,password) =>{
         const userEmail = currentUser?.email || user?.email
         const loggedInUser = {email : userEmail}
         if (currentUser) {
-            axios.post('http://localhost:3000/jwt' , loggedInUser , {withCredentials : true})
+            axios.post('https://y-psi-two.vercel.app/jwt' , loggedInUser , {withCredentials : true})
             .then(res => {
                 console.log('token response', res.data);
             })
         }else{
-            axios.post('http://localhost:3000/logout',loggedInUser,
+            axios.post('https://y-psi-two.vercel.app/logout',loggedInUser,
             {withCredentials:true})
             .then(res => {
                 console.log(res.data);

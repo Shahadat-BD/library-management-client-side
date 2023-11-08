@@ -33,12 +33,12 @@ const handleBookBorrow = event =>{
        const borrowInfo = {returnDate,userName,email,bookImage,bookName,category,borrowedDate}
 
     // implement : single user can not borrowing a book twice.
-        fetch(`http://localhost:3000/borrowd-books?email=${email}`)
+        fetch(`https://y-psi-two.vercel.app/borrowd-books?email=${email}`)
         .then(res => res.json())
         .then(data => {
             const exists = data.find( name => name.bookName === bookName)
             if (!exists) {
-                fetch('http://localhost:3000/borrowd-books',{
+                fetch('https://y-psi-two.vercel.app/borrowd-books',{
                     method:"POST",
                     headers:{
                         'content-type':'application/json'

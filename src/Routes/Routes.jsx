@@ -34,18 +34,18 @@ const router = createBrowserRouter([
             {
                 path : "/books/:category",
                 element:<BooksByCategory></BooksByCategory>,
-                loader : ({params})=> fetch(`http://localhost:3000/books/${params.category}`)
+                loader : ({params})=> fetch(`https://y-psi-two.vercel.app/books/${params.category}`)
 
             },
             {
                 path:"/bookDetails/:id",
                 element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-                loader:({params})=> fetch(`http://localhost:3000/bookDetails/${params.id}`)
+                loader:({params})=> fetch(`https://y-psi-two.vercel.app/bookDetails/${params.id}`)
             },
             {
                 path:"/readBook/:id",
                 element : <ReadBooks></ReadBooks>,
-                loader:({params})=> fetch(`http://localhost:3000/readBook/${params.id}`)
+                loader:({params})=> fetch(`https://y-psi-two.vercel.app/readBook/${params.id}`)
 
             },
             {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             {
                  path : "/updateBook/:id",
                  element : <UpdatedBookForm></UpdatedBookForm>,
-                 loader : ({params}) => fetch(`http://localhost:3000/updateBook/${params.id}`)
+                 loader : ({params}) => fetch(`https://y-psi-two.vercel.app/updateBook/${params.id}`)
             },
             {
                 path:"/borrowed-Books",

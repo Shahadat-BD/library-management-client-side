@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const BookCategory = () => {
     const [categoryBook,setCategoryBook] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:3000/book_category')
+        fetch('https://y-psi-two.vercel.app/book_category')
         .then(res => res.json())
         .then(data => {
             setCategoryBook(data)
