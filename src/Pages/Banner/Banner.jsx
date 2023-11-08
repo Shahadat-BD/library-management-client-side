@@ -1,59 +1,18 @@
 import React from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-// import required modules
-import { Autoplay, Pagination } from 'swiper/modules';
-import slider_1 from "../../assets/images/slider/slider-1.jpg"
-import slider_2 from "../../assets/images/slider/slider-2.jpg"
-import slider_3 from "../../assets/images/slider/slider-3.jpg"
-
+import {AiOutlineArrowRight} from 'react-icons/ai'
+import './Banner.css'
 const Banner = () => {
   return (
-    <div className="my-10">
-      <Swiper 
-        slidesPerView={1}
-        autoplay={{
-           delay : 2500
-        }}
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 1,
-            spaceBetween: 50,
-          },
-        }}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination,Autoplay]}
-        className="mySwiper relative"
-      >
-        <SwiperSlide >
-               <img className="lg:h-[500px] w-full "  src={slider_1} alt=""  />
-        </SwiperSlide>
-        <SwiperSlide >
-               <img className="lg:h-[500px] w-full"  src={slider_2} alt=""  />
-        </SwiperSlide>
-        <SwiperSlide >
-               <img className="lg:h-[500px] w-full"  src={slider_3} alt=""  />
-        </SwiperSlide>
-            
-      </Swiper>
-
+    <div className='banner-added'>
+    <div className='flex justify-center items-center lg:h-[500px] h-[350px]'>
+        <div className='text-center' 
+           >
+            <h1 className='lg:w-[70%] m-auto lg:text-6xl md:text-2xl text-3xl text-center text-white font-semibold'>Welcome to my<span  className='text-pink-500'> Library management system</span> website </h1>
+        <button
+            className='text-white bg-pink-500 lg:px-8 lg:py-3 px-4 py-2  lg:mt-10 mt-5 font-bold lg:text-lg text-md items-center '>Explore Now <AiOutlineArrowRight className='float-right lg:mt-[3px] mt-1  lg:text-2xl'/> </button>
+        </div>
     </div>
+</div>
   );
 };
 

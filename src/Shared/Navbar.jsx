@@ -6,7 +6,6 @@ import { CiDark } from "react-icons/ci";
 const Navbar = () => {
 
   const { user,logOut } = useContext(AuthContext)
-  console.log(user?.photoURL);
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -63,13 +62,13 @@ const Navbar = () => {
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 dark:bg-gray-800 rounded-box w-52">
               {link}
             </ul>
           </div>
           <Link to={'/'}>
             <div className='flex items-center'>
-            <img className='lg:w-20 w-10 lg:-ml-0 'src={logo} alt="" srcset="" />
+            <img className='lg:w-20 w-10 lg:-ml-0 -ml-5'src={logo} alt="" srcset="" />
             <div>
               <p className='lg:text-3xl text-md font-bold dark:text-white'>
                 Book<span className='text-pink-500'>Stack</span>

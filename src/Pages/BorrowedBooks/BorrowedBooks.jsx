@@ -91,7 +91,7 @@ const BorrowedBooks = () => {
                 :
                 <div className='lg:w-1/2 m-auto text-center lg:my-32'>
                     <p className='text-red-500 font-bold text-2xl mb-2'>Sorry you didn't borrow any books !</p>
-                    <p className='lg:w-2/3 m-auto font-bold'>So if you want to borrow books, please go to the home page.
+                    <p className='lg:w-2/3 m-auto font-bold dark:text-white'>So if you want to borrow books, please go to the home page.
                      and choose your favorite category</p>
                 </div>
              }

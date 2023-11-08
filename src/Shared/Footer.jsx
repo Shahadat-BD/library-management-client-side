@@ -4,7 +4,7 @@ import logo from "../assets/images/logo.png";
 import icon_1 from "../assets/icon/gogle.png";
 import icon_2 from "../assets/icon/indin.png";
 import icon_3 from "../assets/icon/twitter.png";
-import icon_4 from "../assets/icon/twitter.png";
+import icon_4 from "../assets/icon/instragram.png";
 
 const Footer = () => {
     return (

@@ -1,0 +1,11 @@
+.banner-added{
+    background-image: linear-gradient(
+        rgba(27, 25, 25, 0.805),
+        rgba(30, 29, 29, 0.586)
+      ),
+      url('../../assets/images/slider/slider-3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    background-position: center center;
+}

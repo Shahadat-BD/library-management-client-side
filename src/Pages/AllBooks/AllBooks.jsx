@@ -19,20 +19,20 @@ const AllBooks = () => {
             <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-10'>
             {
                 allBooks.map(allBook => 
-                <div key={allBook._id}>
+                <div key={allBook._id} className='p-5'>
                     <img className='h-72 w-full rounded-r-xl ' src={allBook.bookImage} alt="" srcset="" />
                      <p className='text-lg font-bold mt-2 dark:text-white'>{allBook.bookName}</p>
                       <p className='font-bold text-pink-500 text-sm '> {allBook.authorName}</p>
-                      <p className='font-bold text-gray-500 text-sm'>category : {allBook.category}</p>
+                      <p className='font-bold text-gray-500 dark:text-gray-300 text-sm'>category : {allBook.category}</p>
                       <p>{allBook.rating}</p>
                     
                     <div className='flex'>
                     <Link to={`/updateBook/${allBook._id}`}>
-                    <button className='text-white bg-pink-500 px-2 py-2 rounded-md mr-5 flex items-center'> <BiEdit className='text-xl'/>update</button>
+                    <button className='text-white bg-pink-500 px-2 py-2 rounded-md mr-5 flex text-xs items-center'> <BiEdit className='text-lg'/>update</button>
                     </Link>
                     
                     <Link to={`/bookDetails/${allBook._id}`}>
-                    <button className='text-white bg-pink-500  px-2 py-2 rounded-md flex items-center'> <BiSpreadsheet className='text-xl'/>details</button>
+                    <button className='text-white bg-pink-500  px-2 py-2 rounded-md flex text-xs items-center'> <BiSpreadsheet className='text-lg'/>details</button>
                     </Link>
                     </div>
                 </div> 

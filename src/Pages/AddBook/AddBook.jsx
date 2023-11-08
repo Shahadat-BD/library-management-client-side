@@ -34,7 +34,7 @@ const AddBook = () => {
     }
     return (
         <div>
-            <div className='lg:w-[50%] rounded-md m-auto md:w-[70%] w-full md:my-[185px] lg:my-10  bg-gray-200'>
+            <div className='lg:w-[50%] rounded-md m-auto md:w-[70%] w-[90%] md:my-[185px] lg:my-10 my-10 bg-gray-200'>
              <h3 className='text-2xl text-pink-600 font-bold p-3 text-center'>Add New Book</h3>
             <form onSubmit={handleAddBook} className='px-5 py-5'>
                 <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5'>
@@ -42,6 +42,7 @@ const AddBook = () => {
                 <input className='py-2 pl-2  rounded-sm' type="text" required placeholder='Author name' name="authorName" id="" />
                 <input className='py-2 pl-2  rounded-sm' type='number'  min="0" max="1000" step="0.01" placeholder='rating' name="rating" id="" />
                 <input className='py-2 pl-2  rounded-sm' type="number" required placeholder='book quantity' name="quantity" id="" />
+        
                 <select name="category" id="">
                     <option value="islamic">islamic</option>
                     <option value="Programming">Programming</option>

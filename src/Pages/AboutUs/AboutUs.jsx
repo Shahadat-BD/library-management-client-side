@@ -5,12 +5,12 @@ const AboutUs = () => {
         <div>
              <div className="lg:my-20 my-10">
       <div className="flex lg:flex-row flex-col items-center justify-around gap-5">
-        <div className="lg:mb-0 mb-10">
-        <img className=" lg:w-[400px] w-full h-[300px] lg:h-[550px] rounded-lg " src={about} alt=""  />
+        <div className="lg:mb-0 mb-10 lg:w-1/3 w-full">
+        <img className=" lg:w-[400px] lg:h-[550px] w-full h-[500px] rounded-lg " src={about} alt=""  />
         </div>
         <div className="lg:w-1/2 w-full">
           <h3 className="text-pink-500 font-semibold text-md">About Us</h3>
-          <h5 className="text-4xl dark:text-white font-bold my-3">We are qualified &  experience in this filed.how to do library management system.</h5>
+          <h5 className="lg:text-4xl text-2xl dark:text-white font-bold my-3">We are qualified &  experience in this filed.how to do library management system.</h5>
           <p className="text-[#737373] dark:text-[#ffffffa1] font-normal lg:w-[90%]">
             
           At BookStack, we are passionate about literature and knowledge. As your trusted partner in the world of books, we specialize in curating an extensive collection of novels, Islamic texts, programming guides, and business-related publications. Our mission is to connect readers with their next great read, offering a diverse range of books to satisfy every literary appetite.

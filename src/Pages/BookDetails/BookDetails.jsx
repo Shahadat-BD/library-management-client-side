@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react'
+import React, { useContext} from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { ToastContainer, toast } from "react-toastify";
@@ -23,41 +23,53 @@ function BookDetails() {
     const parseQuantity = parseInt(quantity)
     let decreaseQuantity = parseQuantity
 
+
 const handleBookBorrow = event =>{
        event.preventDefault()
        const form = event.target
        const returnDate = form.returnDate.value
-       const borrowInfo = {returnDate,userName,email,bookImage,bookName,category,borrowedDate,}
-       
-       fetch('http://localhost:3000/borrowd-books',{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
-            },
-            body: JSON.stringify(borrowInfo)
-         })
-         .then(res=> res.json())
-         .then(data => {
-              if (data.acknowledged) {
-                  toast('borrowed books successfully added in database')
-              }
-         })
+       const borrowInfo = {returnDate,userName,email,bookImage,bookName,category,borrowedDate}
 
-            decreaseQuantity = decreaseQuantity - 1
-            
-         fetch(`http://localhost:3000/books/${_id}`,{
-            method :"PATCH",
-            headers :{
-                "content-type":"application/json"
-            },
-            body : JSON.stringify({quantity : decreaseQuantity })
-         })
-         .then(res => res.json())
-         .then(data => {
-            if (data.modifiedCount > 0) {
-                window.location.reload(true)
+    // implement : single user can not borrowing a book twice.
+        fetch(`http://localhost:3000/borrowd-books?email=${email}`)
+        .then(res => res.json())
+        .then(data => {
+            const exists = data.find( name => name.bookName === bookName)
+            if (!exists) {
+                fetch('http://localhost:3000/borrowd-books',{
+                    method:"POST",
+                    headers:{
+                        'content-type':'application/json'
+                    },
+                    body: JSON.stringify(borrowInfo)
+                 })
+                 .then(res=> res.json())
+                 .then(data => {
+                      if (data.acknowledged) {
+                          toast('borrowed books successfully added in database')
+                      }
+                 })
+        
+                    decreaseQuantity = decreaseQuantity - 1
+                    
+                 fetch(`http://localhost:3000/books/${_id}`,{
+                    method :"PATCH",
+                    headers :{
+                        "content-type":"application/json"
+                    },
+                    body : JSON.stringify({quantity : decreaseQuantity })
+                 })
+                 .then(res => res.json())
+                 .then(data => {
+                    if (data.modifiedCount > 0) {
+                        window.location.reload(true)
+                    }
+                 })
+            }else{
+              return  toast('book is already exists. so please try another one')
             }
-         })
+        })
+    
 
 
 }
@@ -77,11 +89,12 @@ const handleBookBorrow = event =>{
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'> <span className='font-bold'>Product details : </span> {details.slice(300)}</h3>
                  {/* modal start here */}
                   {/* You can open the modal using document.getElementById('ID').showModal() method */}
-                    {
+                 <div className='flex'>
+                 {
                         decreaseQuantity > 0 ?
-                        <button className="py-2 rounded-md text-white bg-pink-600 px-16 mt-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
+                        <button className="py-2 rounded-md text-white bg-pink-600 lg:px-16 px-10 mt-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
                         :
-                        <button disabled className="py-2 rounded-md text-white bg-pink-600 px-16 mt-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
+                        <button disabled className="py-2 rounded-md text-white bg-pink-600 lg:px-16 px-10 mt-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
                     }
                     <dialog id="my_modal_3" className="modal">
                     <div className="modal-box">
@@ -100,8 +113,9 @@ const handleBookBorrow = event =>{
 
 
                 <Link to={`/readBook/${_id}`}>
-                  <button  className='py-2 ml-3 rounded-md text-white bg-pink-600 px-16 mt-3'>Read</button>
+                  <button  className='py-2 ml-3 rounded-md text-white bg-pink-600 lg:px-16 px-10 mt-3'>Read</button>
                 </Link>
+                 </div>
             </div> 
             </div>
         </div>
