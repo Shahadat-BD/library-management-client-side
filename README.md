@@ -2,11 +2,11 @@
 
 ### Note 
 * I have taken an extra input textArea in add book routes for added some part of this book.
-* swipper slider added in review section.
+* swipper slider implement for review section.
 * I have implemented dark mode on this website.
 ## Main features.
 * This is a simple CRUD based library management system website.
-* In this website I created some section in home page. section name is Navbar , Banner, Latest book , book category , about us , review and footer.
+* In this website I created some section in home page. section name is Navbar , Banner, Latest book , book category , about us ,contact us , review and footer.
 * In out of the home page I also created some rotes for this website. this routes are name is all book , add book , Borrowed books.
 * In this website I created Authentication system by google firebase. like login and registration.
 * In This website I stock in 4 categoies book. Islami,programming,novel,and business.
