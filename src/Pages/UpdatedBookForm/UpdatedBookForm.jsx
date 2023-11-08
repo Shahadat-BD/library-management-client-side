@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import useAxiosSecure from '../../hook/useAxiosSecure';
 
 function UpdatedBookForm() {
  const updateBook = useParams()
 const [updatedBook,setUpdatedBook] = useState([])
- 
+const axiosSecure = useAxiosSecure()
         useEffect(()=>{
-                fetch('http://localhost:3000/books-add')
-                .then(res=> res.json())
-                .then(data => { 
-                  const bookUpdate = data.find(bookUpdate => bookUpdate._id === updateBook.id)
+                axiosSecure.get('/books-add')
+                .then(res => { 
+                  const bookUpdate = res.data.find(bookUpdate => bookUpdate._id === updateBook.id)
                   setUpdatedBook(bookUpdate)
                 })
         },[])
@@ -29,17 +29,9 @@ const [updatedBook,setUpdatedBook] = useState([])
        
         const bookUpdateInfo = {bookImage,bookName,category,rating,authorName}
         
-        fetch(`http://localhost:3000/books-add/${updateBook.id}`,{
-            method:"PUT",
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(bookUpdateInfo)
-            
-        })
-        .then(res=> res.json())
-        .then(data =>{
-            if (data.acknowledged) {
+        axiosSecure.put(`/books-add/${updateBook.id}`,bookUpdateInfo)
+        .then(res =>{
+            if (res.data.acknowledged) {
                 toast("book successfully updated.")        
             }
         })

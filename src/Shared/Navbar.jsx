@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import logo from "../assets/images/logo.png";
 import { CiDark } from "react-icons/ci";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Navbar = () => {
 
   const { user,logOut } = useContext(AuthContext)
@@ -108,6 +110,7 @@ const Navbar = () => {
             </NavLink>
           )}
         </div>
+        <ToastContainer/>
       </div>
     </div>
   );

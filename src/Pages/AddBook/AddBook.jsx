@@ -1,8 +1,10 @@
 import React from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useAxiosSecure from '../../hook/useAxiosSecure';
 
 const AddBook = () => {
+    const axiosSecure = useAxiosSecure()
     const handleAddBook = event =>{
         event.preventDefault()
         const form = event.target
@@ -16,21 +18,14 @@ const AddBook = () => {
         const readBook = form.readBook.value
          
         const bookInfo = {bookName,readBook,authorName,rating,quantity,bookImage,details,category}
-        console.log(bookInfo);
 
-         fetch('http://localhost:3000/books-add',{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
-            },
-            body: JSON.stringify(bookInfo)
-         })
-         .then(res=> res.json())
-         .then(data => {
-              if (data.acknowledged) {
-                  toast('this book successfully added in database')
+        axiosSecure.post('/books-add',bookInfo)
+        .then(res => {
+              if (res.data.acknowledged) {
+                toast('this book successfully added in database')
               }
-         })
+        })
+
     }
     return (
         <div>

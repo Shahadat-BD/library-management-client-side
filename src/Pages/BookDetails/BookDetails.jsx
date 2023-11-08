@@ -3,9 +3,11 @@ import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useAxiosSecure from '../../hook/useAxiosSecure';
 
 function BookDetails() {
     const bookDetails = useLoaderData()
+    const axiosSecure = useAxiosSecure()
     const {bookImage,bookName,quantity,rating,authorName,category,details,_id} = bookDetails
 
     const {user} = useContext(AuthContext)
@@ -52,16 +54,9 @@ const handleBookBorrow = event =>{
         
                     decreaseQuantity = decreaseQuantity - 1
                     
-                 fetch(`http://localhost:3000/books/${_id}`,{
-                    method :"PATCH",
-                    headers :{
-                        "content-type":"application/json"
-                    },
-                    body : JSON.stringify({quantity : decreaseQuantity })
-                 })
-                 .then(res => res.json())
-                 .then(data => {
-                    if (data.modifiedCount > 0) {
+                 axiosSecure.patch(`/books/${_id}`,{quantity : decreaseQuantity})
+                 .then(res => {
+                    if (res.data.modifiedCount > 0) {
                         window.location.reload(true)
                     }
                  })
@@ -92,9 +87,9 @@ const handleBookBorrow = event =>{
                  <div className='flex'>
                  {
                         decreaseQuantity > 0 ?
-                        <button className="py-2 rounded-md text-white bg-pink-600 lg:px-16 px-10 mt-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
+                        <button className="py-2 rounded-md text-white bg-pink-600 lg:px-16 px-10 mt-3 cursor-pointer" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
                         :
-                        <button disabled className="py-2 rounded-md text-white bg-pink-600 lg:px-16 px-10 mt-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
+                        <button disabled className="py-2 rounded-md text-white bg-gray-500 lg:px-16 px-10 mt-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>Borrow</button>
                     }
                     <dialog id="my_modal_3" className="modal">
                     <div className="modal-box">
@@ -105,7 +100,7 @@ const handleBookBorrow = event =>{
                         <form  onSubmit={handleBookBorrow}>
                             <label className='text-pink-600 font-bold'>Write a return date of this book</label>
                             <input className='w-full my-5 px-10 py-2 border-2 rounded-md border-gray-200' required type="date" name="returnDate" id="" />
-                            <input className='bg-pink-600 text-white rounded-md px-8 py-2' type="submit" value="Add Borrow" />
+                            <input className='bg-pink-600 text-white rounded-md px-8 py-2 cursor-pointer' type="submit" value="Add Borrow" />
                         </form>
                     </div>
                     </dialog>

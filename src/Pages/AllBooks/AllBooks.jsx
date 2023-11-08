@@ -1,13 +1,18 @@
-import React, {useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, {useEffect, useState } from 'react';
+import { Link} from 'react-router-dom';
 import { BiEdit , BiSpreadsheet} from "react-icons/bi";
+import useAxiosSecure from '../../hook/useAxiosSecure';
 const AllBooks = () => {
-    const useAllBookLoader = useLoaderData()
-    console.log(useAllBookLoader);
-    const [allBooks,setAllBooks] = useState(useAllBookLoader)
+    const [allBooks,setAllBooks] = useState([])
+    const axiosSecure = useAxiosSecure()
+     useEffect(()=>{
+        axiosSecure.get('/books-add')
+        .then(res =>  setAllBooks(res.data))
+     },[])
+
     
     const handleAvailableQuantity = () => {
-         const availableQuantity = useAllBookLoader.filter(allBook => allBook.quantity > 0)
+         const availableQuantity = allBooks.filter(allBook => allBook.quantity > 0)
           setAllBooks(availableQuantity)
     }
 

@@ -3,9 +3,10 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import BorrowedTable from '../BorrowedTable/BorrowedTable';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import useAxiosSecure from '../../hook/useAxiosSecure';
 const BorrowedBooks = () => {
     const {user} = useContext(AuthContext)
+    const axiosSecure = useAxiosSecure()
     const [borrowedBooks,setBorrowedBooks] = useState([])
     const [books,setBooks] = useState([])
     useEffect(()=>{
@@ -16,11 +17,8 @@ const BorrowedBooks = () => {
         })
     },[])
     useEffect(()=>{
-        fetch('http://localhost:3000/books-add')
-        .then(res => res.json())
-        .then(data => {
-            setBooks(data)
-        })
+        axiosSecure.get('/books-add')
+        .then(res => setBooks(res.data))
     },[])
    
 
@@ -29,16 +27,9 @@ const BorrowedBooks = () => {
        const findBook = books.find(book => book.category === category) 
        let quantity = findBook.quantity;
            quantity = quantity + 1
-           fetch(`http://localhost:3000/books/${findBook._id}`,{
-            method :"PATCH",
-            headers :{
-                "content-type":"application/json"
-            },
-            body : JSON.stringify({quantity : quantity })
-         })
-         .then(res => res.json())
-         .then(data => {
-            if (data.modifiedCount > 0) {
+           axiosSecure.patch(`/books/${findBook._id}`,{quantity : quantity })
+           .then(res => {
+            if (res.data.modifiedCount > 0) {
                 toast('book return successfully')
             }
          })
