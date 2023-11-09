@@ -8,7 +8,7 @@ Click here for the Project Live site Link: [https://bookstack-auth-7442e.web.app
 * using JWT Token for doing CRUD operation in the "all book" and "add book" rotes.
 ## I am implement 2 task of optional requirement.
 * swipper slider implement for review section.
-* I am using Axios interceptors for handling network request. 
+* using Axios interceptors for handling network request. 
 ## Main features.
 * This is a simple CRUD based library management system website.
 * This website only uses for mobile and desktop user.
