@@ -23,10 +23,13 @@ const BorrowedBooks = () => {
    
 
 
-   const handleReturnButton = (id , category)=> {
-       const findBook = books.find(book => book.category === category) 
-       let quantity = findBook.quantity;
-           quantity = quantity + 1
+   const handleReturnButton = (id , bookName)=> {
+    const findBook = books.find(book => book.bookName === bookName) 
+    console.log("return book after macth of bookname ",findBook);
+    let quantity = findBook.quantity + 1 ;
+    console.log("borrow book item id",findBook._id);
+    console.log("quantity after return",quantity);
+    
            axiosSecure.patch(`/books/${findBook._id}`,{quantity : quantity })
            .then(res => {
             if (res.data.modifiedCount > 0) {
