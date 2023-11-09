@@ -21,15 +21,15 @@ const AllBooks = () => {
 
                   <button onClick={()=>handleAvailableQuantity()} className="font-bold bg-gray-200 px-8 py-2 mb-10 rounded-md">Available Books</button>
 
-            <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-10'>
+            <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-10'>
             {
                 allBooks.map(allBook => 
-                <div key={allBook._id} className='p-5'>
-                    <img className='h-72 w-full rounded-r-xl ' src={allBook.bookImage} alt="" srcset="" />
+                <div key={allBook._id}>
+                    <img className='lg:h-72 h-80 w-full rounded-r-xl ' src={allBook.bookImage} alt="" srcset="" />
                      <p className='text-lg font-bold mt-2 dark:text-white'>{allBook.bookName}</p>
                       <p className='font-bold text-pink-500 text-sm '> {allBook.authorName}</p>
                       <p className='font-bold text-gray-500 dark:text-gray-300 text-sm'>category : {allBook.category}</p>
-                      <p>{allBook.rating}</p>
+                      <p className='dark:text-gray-300'>Rating : {allBook.rating}</p>
                     
                     <div className='flex'>
                     <Link to={`/updateBook/${allBook._id}`}>

@@ -74,14 +74,14 @@ const handleBookBorrow = event =>{
         <div className='flex my-10 lg:w-[70%] m-auto md:w-[80%] w-[90%]'>
         <div>
             <div className='flex gap-5 lg:flex-row flex-col items-center'>
-            <img className='lg:w-[490px] lg:h-[430px] rounded-md w-full'  src={bookImage} alt="" srcset="" />
+            <img className='lg:w-[490px] lg:h-[430px] rounded-r-xl  w-full'  src={bookImage} alt="" srcset="" />
            <div>
              <h3 className='font-bold text-pink-600 text-2xl'>{bookName}</h3>    
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-white'> <span className='font-bold'>Author Name :</span> {authorName}</h3>    
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'><span className='font-bold'>Quantity :</span>{quantity}</h3>    
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'><span className='font-bold'>Category : </span>{category}</h3>    
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'><span className='font-bold'>Rating :</span> {rating}</h3> 
-                <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'> <span className='font-bold'>Product details : </span> {details.slice(300)}</h3>
+                <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'> <span className='font-bold'>Book details : </span> {details.slice(300)}</h3>
                  {/* modal start here */}
                   {/* You can open the modal using document.getElementById('ID').showModal() method */}
                  <div className='flex'>

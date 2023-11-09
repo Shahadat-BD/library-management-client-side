@@ -16,7 +16,7 @@ function BooksByCategory() {
                                 <p className='lg:text-2xl text-md font-bold  '>{book.bookName}</p>
                                 <p className='lg:my-2 font-bold text-sm'>Author : {book.authorName}</p>
                                 <p className='font-bold text-sm'>Category : {book.category}</p>
-                                <p className='lg:my-2'>{book.rating}</p>
+                                <p className='lg:my-2'>Rating : {book.rating}</p>
                                <Link to={`/bookDetails/${book._id}`}>
                                <button className='bg-pink-600 lg:text-md text-sm px-3 py-1 text-white font-bold lg:px-5 lg:py-2 lg:rounded-md rounded-sm flex items-center'><BiSpreadsheet className='lg:text-2xl text-xl'/> Book Details </button>
                                </Link>
