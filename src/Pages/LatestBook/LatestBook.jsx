@@ -53,11 +53,11 @@ const LatestBook = () => {
                       <p className='font-bold text-pink-500 text-sm '> Bibotivoshon Bpd</p>
                       <p className='font-bold text-gray-500 text-sm'>category : Novel </p>
                        <div className="rating w-1/3 m-auto">
-                <input type="radio" name="rating-2" className="mask mask-star-2 h-[20px] bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 h-[20px] bg-orange-400"/>
-                <input type="radio" name="rating-2" className="mask mask-star-2 h-[20px] bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 h-[20px] bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 h-[20px] bg-orange-400" />
+                <input type="radio" name="rating-2" className="mask mask-star-2 h-[19px] bg-orange-400" />
+                <input type="radio" name="rating-2" className="mask mask-star-2 h-[19px] bg-orange-400"/>
+                <input type="radio" name="rating-2" className="mask mask-star-2 h-[19px] bg-orange-400" />
+                <input type="radio" name="rating-2" className="mask mask-star-2 h-[19px] bg-orange-400" />
+                <input type="radio" name="rating-2" className="mask mask-star-2 h-[19px] bg-orange-400" />
             </div>
                 </div> 
            </div>
