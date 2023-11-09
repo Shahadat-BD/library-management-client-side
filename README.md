@@ -6,7 +6,7 @@ Click here for the Project Live site Link: [https://bookstack-auth-7442e.web.app
 * I have taken an extra input textArea in add book routes for added some part of this book.
 * I have implemented dark mode on this website.
 * using JWT Token for doing CRUD operation in the "all book" and "add book" rotes.
-### I am implement 2 task of optional requirement.
+## I am implement 2 task of optional requirement.
 * swipper slider implement for review section.
 * I am using Axios interceptors for handling network request. 
 ## Main features.
@@ -23,10 +23,19 @@ Click here for the Project Live site Link: [https://bookstack-auth-7442e.web.app
 * only logged in user, he can see the his/her borrowed books by going to "borrowed book" route.
 * Users can be add category based books by going to "add book" route.
 * Users Updated any books by going to "all books" route.
-
+  
 ## Authentication Features.
 * First time user must be Register. other wise he can not going to the private route.
 * After completed Registerd Then the next time he goes to login, he will be done.
 * When a user Register, the password must be 6 characters and at least one uppercase letter and special character.other wise showing a error message.
 * When user only login, password and email must be correct.
-  
+
+## Technology Use 
+* Javascirpt
+* React.js
+* React Router.
+* Node.js
+* Express.js
+* Firebase (for handling Authentication)
+* Tailwind css
+* Desi Ui 
