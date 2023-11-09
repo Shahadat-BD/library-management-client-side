@@ -6,7 +6,7 @@ const AboutUs = () => {
              <div className="lg:my-20 my-10">
       <div className="flex lg:flex-row flex-col items-center justify-around gap-5">
         <div className="lg:mb-0 mb-10 lg:w-1/3 w-full">
-        <img className=" lg:w-[400px] lg:h-[550px] w-full h-[500px] rounded-lg " src={about} alt=""  />
+        <img className=" lg:w-[400px] lg:h-[550px] md:h-[500px] md:m-auto md:w-[400px] w-full h-[500px] rounded-lg " src={about} alt=""  />
         </div>
         <div className="lg:w-1/2 w-full">
           <h3 className="text-pink-500 font-semibold text-md">About Us</h3>
