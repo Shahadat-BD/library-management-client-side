@@ -21,7 +21,7 @@ const AllBooks = () => {
 
                   <button onClick={()=>handleAvailableQuantity()} className="font-bold bg-gray-200 px-8 py-2 mb-10 rounded-md">Available Books</button>
 
-            <div className='grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-10'>
+            <div className='grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-9'>
             {
                 allBooks.map(allBook => 
                 <div key={allBook._id}>
