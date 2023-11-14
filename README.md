@@ -23,6 +23,7 @@ Click here for the Project Live site Link: [https://bookstack-auth-7442e.web.app
 * only logged in user, he can see the his/her borrowed books by going to "borrowed book" route.
 * Users can be add category based books by going to "add book" route.
 * Users Updated any books by going to "all books" route.
+* loggedIn user can see the all books in one route. the route name is "all book".
   
 ## Authentication Features.
 * First time user must be Register. other wise he can not going to the private route.
