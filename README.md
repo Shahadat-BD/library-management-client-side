@@ -31,11 +31,14 @@ Click here for the Project Live site Link: [https://bookstack-auth-7442e.web.app
 * When user only login, password and email must be correct.
 
 ## Technology Use 
+#### frontend
 * Javascirpt
 * React.js
 * React Router.
-* Node.js
-* Express.js
 * Firebase (for handling Authentication)
 * Tailwind css
-* Desi Ui 
+* Desi Ui
+#### Backend
+* Node.js
+* Express.js
+* MongoDB
