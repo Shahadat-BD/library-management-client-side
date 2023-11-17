@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import useAxiosSecure from '../../hook/useAxiosSecure';
 
-function UpdatedBookForm() {
- const updateBook = useParams()
+function UpdatedBookForm() { 
+const navigate = useNavigate()
+const updateBook = useParams()
 const [updatedBook,setUpdatedBook] = useState([])
 const axiosSecure = useAxiosSecure()
         useEffect(()=>{
@@ -32,7 +33,8 @@ const axiosSecure = useAxiosSecure()
         axiosSecure.put(`/books-add/${updateBook.id}`,bookUpdateInfo)
         .then(res =>{
             if (res.data.acknowledged) {
-                toast("book successfully updated.")        
+                toast("book successfully updated.")       
+                navigate('/all-books') 
             }
         })
 
@@ -48,7 +50,7 @@ const axiosSecure = useAxiosSecure()
                 <input className='py-2 pl-2  rounded-sm' type="text" required defaultValue={authorName} placeholder='Author name' name="authorName" id="" />
                 <input className='py-2 pl-2  rounded-sm' type='number' required defaultValue={rating}  min="0" max="1000" step="0.01" placeholder='rating' name="rating" id="" />
                 <select name="category"  id="" className='py-2 pl-2'>
-                    <option value="islamic">{category}</option>
+                    <option value={category}>{category}</option>
                     <option value="islamic">islamic</option>
                     <option value="Programming">Programming</option>
                     <option value="Novel">Novel</option>

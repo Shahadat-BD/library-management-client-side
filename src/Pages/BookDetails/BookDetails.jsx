@@ -4,6 +4,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useAxiosSecure from '../../hook/useAxiosSecure';
+import Star from '../Star/Star';
 
 function BookDetails() {
     const bookDetails = useLoaderData()
@@ -79,8 +80,8 @@ const handleBookBorrow = event =>{
              <h3 className='font-bold text-pink-600 text-2xl'>{bookName}</h3>    
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-white'> <span className='font-bold'>Author Name :</span> {authorName}</h3>    
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'><span className='font-bold'>Quantity :</span>{quantity}</h3>    
-                <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'><span className='font-bold'>Category : </span>{category}</h3>    
-                <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'><span className='font-bold'>Rating :</span> {rating}</h3> 
+                <h3  className='text-gray-500 font-medium mt-2 mb-2 dark:text-[#ffffffc2]'><span className='font-bold'>Category : </span>{category}</h3>    
+                <Star star={rating}></Star>
                 <h3  className='text-gray-500 font-medium mt-2 dark:text-[#ffffffc2]'> <span className='font-bold'>Book details : </span> {details.slice(300)}</h3>
                  {/* modal start here */}
                   {/* You can open the modal using document.getElementById('ID').showModal() method */}

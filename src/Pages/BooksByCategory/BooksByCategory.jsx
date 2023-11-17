@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import {BiSpreadsheet} from "react-icons/bi"
+import Star from '../Star/Star';
 function BooksByCategory() {
     const bookData = useLoaderData()
     console.log('book data ', bookData);
@@ -15,8 +16,8 @@ function BooksByCategory() {
                              <div className='w-4/5'>
                                 <p className='lg:text-2xl text-md font-bold  '>{book.bookName}</p>
                                 <p className='lg:my-2 font-bold text-sm'>Author : {book.authorName}</p>
-                                <p className='font-bold text-sm'>Category : {book.category}</p>
-                                <p className='lg:my-2'>Rating : {book.rating}</p>
+                                <p className='font-bold text-sm mb-2'>Category : {book.category}</p>
+                                  <Star star={book.rating}></Star>
                                <Link to={`/bookDetails/${book._id}`}>
                                <button className='bg-pink-600 lg:text-md text-sm px-3 py-1 text-white font-bold lg:px-5 lg:py-2 lg:rounded-md rounded-sm flex items-center'><BiSpreadsheet className='lg:text-2xl text-xl'/> Book Details </button>
                                </Link>
