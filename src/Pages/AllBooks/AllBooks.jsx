@@ -2,24 +2,10 @@ import React, {useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
 import { BiEdit , BiSpreadsheet} from "react-icons/bi";
 import useAxiosSecure from '../../hook/useAxiosSecure';
-import { FaStarHalfAlt , FaStar} from "react-icons/fa";
-import { AiOutlineStar } from "react-icons/ai";
 import Star from '../Star/Star';
 
 
 const AllBooks = () => {
- 
-    const ratingStar =  Array.from({length : 5} , (elem , index ) => {
-        let number = index + 0.5
-
-     return(
-          <span key={index}></span>
-     )
-
-
-    })
-
-
 
     const [allBooks,setAllBooks] = useState([])
     const axiosSecure = useAxiosSecure()
