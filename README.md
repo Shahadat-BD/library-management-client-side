@@ -20,15 +20,15 @@ Click here for the Project Live site Link: [https://bookstack-auth-7442e.web.app
 * If a single user can not borrowing a book twice.But returning a book, the user can borrow that specifc book again.
 * when user return this book,then the book will be deleted immediately form "borrowed book" route and with increse quantity of this book.
 
-### Add Book.(private route : so must be logged in user)
+### Add Book.(private route : must be logged in user)
  * User can be add category based any books by fill up this add book form.
-### All Books.(private route : so must be logged in user)
+### All Books.(private route : must be logged in user)
 * User can see the all categories book in this page.
 * User Updated any books by clicking the update button.
 * If user know the details information about any books, then he click the details button.and again he can borrow book and read some parts of this book by clik the read button.
 * when user click the 'avilable book' button then he can see the Books whose quantity is above 0 will show them.
 
-### Borrowed books page.(private route : so must be logged in user)
+### Borrowed books page.(private route : must be logged in user)
 * user can see the their borrowed book by tabular list format.he can see the book image,name,return date,borrow date, and return button.
 * By clicking the return button, user can be return borrowed books When the times comes to retun the book.
 ## Authentication Features.
